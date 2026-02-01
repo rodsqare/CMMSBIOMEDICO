@@ -2,6 +2,8 @@
 
 import { mantenimientosApi, type Mantenimiento } from "@/lib/api/mantenimientos"
 
+export type { Mantenimiento }
+
 export async function getAllMantenimientos(params?: {
   page?: number
   perPage?: number

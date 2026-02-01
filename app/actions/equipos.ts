@@ -11,6 +11,8 @@ import {
   type EquipoWithDetails,
 } from "@/lib/api/equipos"
 
+export type { Equipo, EquiposResponse, EquipoWithDetails }
+
 // Obtener lista de equipos con filtros
 export async function fetchEquipos(params?: {
   page?: number

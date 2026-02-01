@@ -1,6 +1,8 @@
 "use server"
 
-import { getDashboardStats as getStatsFromAPI } from "@/lib/api/dashboard"
+import { getDashboardStats as getStatsFromAPI, type DashboardStats } from "@/lib/api/dashboard"
+
+export type { DashboardStats }
 
 const MOCK_DATA = {
   usuariosCount: 12,

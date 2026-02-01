@@ -169,4 +169,4 @@ export async function getUserActivity(usuarioId: number, token: string): Promise
   }
 }
 
-export type { UserActivity }
+export type { UserActivity, Usuario, UsuarioWithPassword, FetchUsuariosParams, UsuariosResponse }
