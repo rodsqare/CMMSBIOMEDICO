@@ -56,7 +56,7 @@ export default function LoginPage() {
 
       console.log("[v0] Client: Login result:", result)
 
-      if (!result.success) {
+      if (!result.success || !result.user) {
         setError(result.error || "Error al iniciar sesión")
         setIsLoading(false)
         return
