@@ -14,6 +14,8 @@ import {
   type OrdenesTrabajoResponse,
 } from "@/lib/api/ordenes-trabajo"
 
+export type { OrdenTrabajo, OrdenesTrabajoFilters, OrdenesTrabajoResponse }
+
 export async function fetchOrdenesTrabajo(filters?: OrdenesTrabajoFilters): Promise<OrdenesTrabajoResponse> {
   try {
     console.log("[v0] fetchOrdenesTrabajo - Calling API with filters:", filters)
