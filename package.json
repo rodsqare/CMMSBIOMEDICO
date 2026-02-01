@@ -49,7 +49,7 @@
     "jspdf-autotable": "latest",
     "lucide-react": "^0.454.0",
     "mysql2": "^3.9.1",
-    "next": "15.1.11",
+    "next": "15.1.9",
     "next-themes": "latest",
     "qrcode": "1.5.4",
     "react": "19.0.0",
@@ -70,7 +70,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^8",
-    "eslint-config-next": "15.1.11",
+    "eslint-config-next": "15.1.9",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
     "typescript": "^5"

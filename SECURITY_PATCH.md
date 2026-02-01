@@ -2,10 +2,10 @@
 
 ## Vulnerabilities Fixed
 
-**Next.js 15.1.0 → 15.1.11**
+**Next.js 15.1.0 → 15.1.9** (Official patched release per Vercel Security Bulletin)
 
 ### CVEs Addressed:
-- **CVE-2025-66478** (CRITICAL) - React2Shell vulnerability
+- **CVE-2025-66478** (CRITICAL) - React2Shell vulnerability in React Server Components
 - **CVE-2025-55184** (HIGH) - Denial of Service
 - **CVE-2025-55183** (MEDIUM) - Source code disclosure
 - **CVE-2025-67779** (HIGH) - Additional vulnerability
@@ -15,13 +15,19 @@
 ```json
 {
   "dependencies": {
-    "next": "15.1.0" → "15.1.11"
+    "next": "15.1.0" → "15.1.9"
   },
   "devDependencies": {
-    "eslint-config-next": "15.1.0" → "15.1.11"
+    "eslint-config-next": "15.1.0" → "15.1.9"
   }
 }
 ```
+
+## Vercel Official Patch Mapping
+
+According to Vercel's React2Shell Security Bulletin:
+- **Vulnerable Range**: Next.js 15.0.0 through 16.0.6
+- **Patched for 15.1.x**: 15.1.9
 
 ## Impact
 
@@ -50,7 +56,15 @@ After deployment:
 ## Timeline
 
 - **December 4, 2025**: React2Shell exploits published
-- **December 5, 2025**: Vercel releases fix-react2shell-next CLI tool
-- **December 8, 2025**: This patch applied (15.1.11)
+- **December 5, 2025**: Vercel releases fix-react2shell-next CLI tool and patched versions
+- **December 8, 2025**: Vercel Agent automated upgrade capability deployed
+- **Today**: This patch applied (15.1.9 - official patched release)
+
+## Next Steps
+
+1. **Commit & Push**: Push these changes to GitHub
+2. **Railway Redeploy**: Railway will automatically detect the updated package.json and redeploy
+3. **Verify**: Confirm deployment succeeds without security warnings
+4. **Rotate Secrets**: If app was unpatched since Dec 4, rotate all environment variables
 
 Status: ✅ PATCHED AND READY FOR DEPLOYMENT
