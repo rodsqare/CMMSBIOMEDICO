@@ -305,7 +305,7 @@ function transformEquipmentToEquipo(equipment: Partial<Equipment>): Partial<Equi
     nivel_riesgo: equipment.nivelRiesgo as "alto" | "medio" | "bajo",
     proveedor_nombre: equipment.proveedorNombre,
     proveedor_direccion: equipment.proveedorDireccion,
-    proveedor_telefono: equipment.proveedor_telefono,
+    proveedor_telefono: equipment.proveedorTelefono,
     observaciones: equipment.observaciones,
   }
 }
