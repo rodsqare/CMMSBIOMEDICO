@@ -59,7 +59,7 @@ export async function saveEquipo(data: Equipo, userId?: string): Promise<{ succe
 
       const cleanData = {
         ...createData,
-        nombre: createData.nombre || "",
+        nombre_equipo: createData.nombre_equipo || "",
         numero_serie: createData.numero_serie || "",
         fabricante: createData.fabricante || "",
         modelo: createData.modelo || "",
