@@ -1,6 +1,7 @@
 "use server"
 
 import { getDocumentos, uploadDocumento, deleteDocumento, downloadDocumento } from "@/lib/api/documentos"
+import { getAuthToken } from "@/lib/supabase/server"
 
 export async function fetchDocumentos(equipoId: number) {
   try {
@@ -15,12 +16,22 @@ export async function uploadDocumentoAction(equipoId: number, formData: FormData
   try {
     const file = formData.get('file') as File
     const subidoPorId = formData.get('subido_por_id') as string
+    const token = await getAuthToken()
     
     if (!file) {
       throw new Error("No file provided")
     }
 
-    return await uploadDocumento(equipoId, file, subidoPorId ? Number.parseInt(subidoPorId) : undefined)
+    if (!token) {
+      throw new Error("No authentication token found. Please log in again.")
+    }
+
+    return await uploadDocumento(
+      equipoId,
+      file,
+      subidoPorId ? Number.parseInt(subidoPorId) : 0,
+      token
+    )
   } catch (error) {
     console.error("Error uploading documento:", error)
     throw error

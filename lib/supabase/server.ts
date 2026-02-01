@@ -21,3 +21,8 @@ export async function createClient() {
     },
   })
 }
+
+export async function getAuthToken(): Promise<string | null> {
+  const cookieStore = await cookies()
+  return cookieStore.get("authToken")?.value || null
+}
