@@ -107,7 +107,7 @@ import {
 } from "./actions/mantenimientos"
 import type { Mantenimiento } from "@/lib/api/mantenimientos"
 import { generatePDF, downloadPDF, generateEquipmentTechnicalSheet, generateWorkOrderPDF } from "@/lib/pdf-generator" // Added generateEquipmentTechnicalSheet, generateWorkOrderPDF
-import { canAccessSection, type CurrentUser, type RoleType, DEFAULT_PERMISSIONS_BY_ROLE } from "@/lib/utils/permissions" // Import DEFAULT_PERMISSIONS_BY_ROLE
+import { canAccessSection, type CurrentUser, type RoleType, type PermissionKey, DEFAULT_PERMISSIONS_BY_ROLE } from "@/lib/utils/permissions" // Import DEFAULT_PERMISSIONS_BY_ROLE
 import { filterLogs } from "@/lib/api/logs"
 import { fetchAuditLogs } from "@/app/actions/logs"
 import { getNotifications, markAsRead, markAllAsRead, type Notification } from "@/lib/api/notifications"
@@ -654,13 +654,14 @@ export default function DashboardPage() {
       const userData = usuarios.find((u: any) => u.correo === userEmail)
       if (userData) {
         const roletype = userData.rol.toLowerCase() as RoleType
+        const permissions = (userData.permissions as Record<PermissionKey, boolean> | undefined) || DEFAULT_PERMISSIONS_BY_ROLE[roletype]
         const currentUserWithPermissions: CurrentUser = {
           id: userData.id,
           nombre: userData.nombre,
           correo: userEmail,
           rol: roletype,
           especialidad: userData.especialidad,
-          permissions: userData.permissions || DEFAULT_PERMISSIONS_BY_ROLE[roletype],
+          permissions,
         }
         setCurrentUser(currentUserWithPermissions)
         setUserRole(roletype)
