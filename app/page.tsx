@@ -5128,7 +5128,7 @@ export default function DashboardPage() {
       }
 
       if (reportType !== "cronograma" && (reportFechaInicio || reportFechaFin)) {
-        data = data.filter((item) => {
+        data = (data as any[]).filter((item) => {
           // Find the relevant date field in the item
           const itemDateString =
             item.proximaFecha || // For Mantenimientos
