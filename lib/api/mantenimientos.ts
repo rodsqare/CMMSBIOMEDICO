@@ -18,6 +18,7 @@ export interface Mantenimiento {
   actualizadoEn?: string
   programada_orden_generada?: boolean
   tecnicoAsignadoId?: number
+  tecnicoAsignado?: string
 }
 
 export interface MantenimientoBackend {
