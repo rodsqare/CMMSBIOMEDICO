@@ -165,6 +165,21 @@ async function waitForDatabase(maxRetries = 30, retryDelay = 1000) {
 // Ejecutar inicialización
 (async () => {
   try {
+    // Skip initialization during build phase if database is not available
+    const isDatabaseConfigured = process.env.DATABASE_URL || 
+                                 (process.env.DB_HOST && process.env.DB_USER);
+    
+    if (!isDatabaseConfigured && process.env.NODE_ENV === 'production') {
+      console.log('[INIT-DB] ⏭️ Skipping database initialization - database not configured for build phase');
+      console.log('[INIT-DB] Run "npm run init-db" after deployment when database is available');
+      process.exit(0);
+    }
+
+    if (!isDatabaseConfigured) {
+      console.warn('[INIT-DB] ⚠️ Database configuration not found. Skipping initialization.');
+      process.exit(0);
+    }
+
     await waitForDatabase();
     await initializeDatabase();
   } catch (error) {
