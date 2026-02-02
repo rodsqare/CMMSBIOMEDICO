@@ -5,7 +5,7 @@ export interface Notification {
   tipo: "info" | "success" | "warning" | "error"
   titulo: string
   mensaje: string
-  created_at: string
+  fecha: string
   leida: boolean
 }
 
