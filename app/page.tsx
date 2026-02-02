@@ -3970,7 +3970,18 @@ export default function DashboardPage() {
                       onClick={() => {
                         setEditingPermissions(selectedUser)
                         if (selectedUser?.permissions && Object.keys(selectedUser.permissions).length > 0) {
-                          setUserPermissions(selectedUser.permissions)
+                          setUserPermissions({
+                            gestionEquipos: selectedUser.permissions.gestionEquipos ?? false,
+                            gestionUsuarios: selectedUser.permissions.gestionUsuarios ?? false,
+                            ordenesTrabajoCrear: selectedUser.permissions.ordenesTrabajoCrear ?? false,
+                            ordenesTrabajoAsignar: selectedUser.permissions.ordenesTrabajoAsignar ?? false,
+                            ordenesTrabajoEjecutar: selectedUser.permissions.ordenesTrabajoEjecutar ?? false,
+                            mantenimientoPreventivo: selectedUser.permissions.mantenimientoPreventivo ?? false,
+                            reportesGenerar: selectedUser.permissions.reportesGenerar ?? false,
+                            reportesVer: selectedUser.permissions.reportesVer ?? false,
+                            logsAcceso: selectedUser.permissions.logsAcceso ?? false,
+                            configuracionSistema: selectedUser.permissions.configuracionSistema ?? false,
+                          })
                         } else {
                           const roleKey = selectedUser?.rol?.toLowerCase() as RoleType | undefined
                           if (roleKey && DEFAULT_PERMISSIONS_BY_ROLE[roleKey]) {
