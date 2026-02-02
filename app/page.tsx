@@ -1414,7 +1414,7 @@ export default function DashboardPage() {
                         <td className="px-4 py-3 text-right">
                           <div className="flex items-center justify-end gap-2">
                             {/* CHANGE: Added conditional rendering and colors to icons */}
-                            {order.ordenesTrabajoAsignar && (
+                            {!order.tecnicoAsignadoId && (
                               <Button
                                 variant="outline"
                                 size="sm"
