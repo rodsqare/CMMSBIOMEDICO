@@ -5993,7 +5993,6 @@ export default function DashboardPage() {
       <AppSidebar
         activeSection={activeSection}
         onSectionChange={handleSectionChange}
-        userName={currentUser?.nombre || "Usuario"}
         userRole={currentUser?.rol || "administrador"}
         currentUser={currentUser}
         hospitalLogo={hospitalLogo}
