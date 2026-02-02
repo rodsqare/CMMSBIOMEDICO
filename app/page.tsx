@@ -4103,7 +4103,7 @@ export default function DashboardPage() {
                       <div className="mt-4">
                         <p className="text-sm font-medium text-gray-700 mb-2">Últimas actividades:</p>
                         <div className="space-y-2 max-h-48 overflow-y-auto">
-                          {userActivity.actividades_recientes.map((actividad) => (
+                          {userActivity.actividades_recientes.map((actividad: any) => (
                             <div key={actividad.id} className="bg-white p-2 rounded border border-gray-200">
                               <div className="flex items-start justify-between gap-2">
                                 <div className="flex-1 min-w-0">
