@@ -5841,7 +5841,7 @@ export default function DashboardPage() {
       correo: user.correo,
       rol: roletype,
       especialidad: user.especialidad,
-      permissions: user.permissions || DEFAULT_PERMISSIONS_BY_ROLE[roletype],
+      permissions: (user.permissions as Record<PermissionKey, boolean> | undefined) || DEFAULT_PERMISSIONS_BY_ROLE[roletype],
     }
     setCurrentUser(currentUserWithPermissions)
     setUserRole(roletype)
