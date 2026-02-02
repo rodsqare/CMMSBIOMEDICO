@@ -5087,7 +5087,7 @@ export default function DashboardPage() {
   const handleGenerateReport = async () => {
     setIsGeneratingReport(true)
     try {
-      let data: any[] = []
+      let data: any[] | { equipos: any[]; mantenimientos: any[] } = []
 
       if (reportType === "equipos") {
         const response = await fetchEquipos({})
