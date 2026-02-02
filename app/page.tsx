@@ -1639,7 +1639,7 @@ export default function DashboardPage() {
                       const numValue = Number(value)
                       setNewOrderData({
                         ...newOrderData,
-                        tecnicoAsignadoId: numValue === 0 ? null : numValue,
+                        tecnicoAsignadoId: numValue === 0 ? undefined : numValue,
                       })
                     }}
                   >
