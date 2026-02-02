@@ -4003,7 +4003,7 @@ export default function DashboardPage() {
                         ? selectedUser.permissions
                         : selectedUser?.rol
                           ? DEFAULT_PERMISSIONS_BY_ROLE[selectedUser.rol.toLowerCase() as RoleType]
-                          : DEFAULT_PERMISSIONS_BY_ROLE.técnico
+                          : DEFAULT_PERMISSIONS_BY_ROLE.tecnico
 
                     return (
                       <>
