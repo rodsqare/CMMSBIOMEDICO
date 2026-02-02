@@ -800,6 +800,7 @@ export default function DashboardPage() {
           usuariosCount: 0,
           equiposCount: 0,
           mantenimientosCount: 0,
+          ordenesCount: 0,
           equiposPorFabricante: [],
           mantenimientosPorMes: [],
         })
