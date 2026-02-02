@@ -147,7 +147,7 @@ export async function updateEquipo(id: number, data: Partial<Equipo>): Promise<E
 
 export async function deleteEquipo(id: number, userId?: string): Promise<void> {
   const client = isServer ? serverApiClient : apiClient
-  return await client.delete(`/equipos/${id}`, userId)
+  return await client.delete(`/equipos/${id}`, undefined, userId)
 }
 
 // Check if equipment has associated maintenances or work orders
