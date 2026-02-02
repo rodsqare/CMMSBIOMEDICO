@@ -71,7 +71,7 @@ export function NotificationsDropdown() {
                   <p className="text-sm font-medium leading-none">{notification.titulo}</p>
                   <p className="text-sm text-muted-foreground">{notification.mensaje}</p>
                   <p className="text-xs text-muted-foreground">
-                    {new Date(notification.created_at).toLocaleDateString()}
+                    {new Date(notification.fecha).toLocaleDateString()}
                   </p>
                 </div>
               </div>
