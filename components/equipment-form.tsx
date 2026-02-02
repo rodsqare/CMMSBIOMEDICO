@@ -275,7 +275,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
           )}
 
           {/* Código Institucional */}
-          <div ref={(el) => (fieldRefs.current.codigo_institucional = el)}>
+          <div ref={(el) => { fieldRefs.current.codigo_institucional = el }}>
             <Label htmlFor="codigo_institucional">
               Código Institucional <span className="text-red-500">*</span>
             </Label>
@@ -291,7 +291,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
           </div>
 
           {/* Nombre del Equipo */}
-          <div ref={(el) => (fieldRefs.current.nombre_equipo = el)}>
+          <div ref={(el) => { fieldRefs.current.nombre_equipo = el }}>
             <Label htmlFor="nombre_equipo">
               Nombre del Equipo <span className="text-red-500">*</span>
             </Label>
@@ -307,7 +307,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
 
           <div className="grid grid-cols-2 gap-4">
             {/* Fabricante */}
-            <div ref={(el) => (fieldRefs.current.fabricante = el)}>
+            <div ref={(el) => { fieldRefs.current.fabricante = el }}>
               <Label htmlFor="fabricante">
                 Fabricante <span className="text-red-500">*</span>
               </Label>
@@ -322,7 +322,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
             </div>
 
             {/* Modelo */}
-            <div ref={(el) => (fieldRefs.current.modelo = el)}>
+            <div ref={(el) => { fieldRefs.current.modelo = el }}>
               <Label htmlFor="modelo">
                 Modelo <span className="text-red-500">*</span>
               </Label>
@@ -338,7 +338,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
           </div>
 
           {/* Número de Serie */}
-          <div ref={(el) => (fieldRefs.current.numero_serie = el)}>
+          <div ref={(el) => { fieldRefs.current.numero_serie = el }}>
             <Label htmlFor="numero_serie">
               Número de Serie <span className="text-red-500">*</span>
             </Label>
@@ -354,7 +354,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
 
           <div className="grid grid-cols-2 gap-4">
             {/* Ubicación */}
-            <div ref={(el) => (fieldRefs.current.ubicacion = el)}>
+            <div ref={(el) => { fieldRefs.current.ubicacion = el }}>
               <Label htmlFor="ubicacion">
                 Ubicación <span className="text-red-500">*</span>
               </Label>
@@ -369,7 +369,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
             </div>
 
             {/* Servicio */}
-            <div ref={(el) => (fieldRefs.current.servicio = el)}>
+            <div ref={(el) => { fieldRefs.current.servicio = el }}>
               <Label htmlFor="servicio">
                 Servicio <span className="text-red-500">*</span>
               </Label>
@@ -423,7 +423,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
 
           <div className="grid grid-cols-3 gap-4">
             {/* Fechas */}
-            <div ref={(el) => (fieldRefs.current.fecha_adquisicion = el)}>
+            <div ref={(el) => { fieldRefs.current.fecha_adquisicion = el }}>
               <Label htmlFor="fecha_adquisicion">Fecha de Adquisición</Label>
               <Input
                 id="fecha_adquisicion"
@@ -435,7 +435,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
               {errors.fecha_adquisicion && <p className="text-sm text-red-500 mt-1">{errors.fecha_adquisicion}</p>}
             </div>
 
-            <div ref={(el) => (fieldRefs.current.fecha_instalacion = el)}>
+            <div ref={(el) => { fieldRefs.current.fecha_instalacion = el }}>
               <Label htmlFor="fecha_instalacion">Fecha de Instalación</Label>
               <Input
                 id="fecha_instalacion"
@@ -447,7 +447,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
               {errors.fecha_instalacion && <p className="text-sm text-red-500 mt-1">{errors.fecha_instalacion}</p>}
             </div>
 
-            <div ref={(el) => (fieldRefs.current.vencimiento_garantia = el)}>
+            <div ref={(el) => { fieldRefs.current.vencimiento_garantia = el }}>
               <Label htmlFor="vencimiento_garantia">Vencimiento de Garantía</Label>
               <Input
                 id="vencimiento_garantia"
@@ -476,7 +476,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
               />
             </div>
 
-            <div ref={(el) => (fieldRefs.current.proveedor_telefono = el)}>
+            <div ref={(el) => { fieldRefs.current.proveedor_telefono = el }}>
               <Label htmlFor="proveedor_telefono">Teléfono del Proveedor</Label>
               <Input
                 id="proveedor_telefono"
@@ -488,7 +488,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
               {errors.proveedor_telefono && <p className="text-sm text-red-500 mt-1">{errors.proveedor_telefono}</p>}
             </div>
 
-            <div ref={(el) => (fieldRefs.current.proveedor_direccion = el)}>
+            <div ref={(el) => { fieldRefs.current.proveedor_direccion = el }}>
               <Label htmlFor="proveedor_direccion">Dirección del Proveedor</Label>
               <Textarea
                 id="proveedor_direccion"
@@ -503,7 +503,7 @@ export function EquipmentForm({ open, onOpenChange, equipment, onSuccess, userId
           </div>
 
           {/* Observaciones */}
-          <div ref={(el) => (fieldRefs.current.observaciones = el)}>
+          <div ref={(el) => { fieldRefs.current.observaciones = el }}>
             <Label htmlFor="observaciones">Observaciones</Label>
             <Textarea
               id="observaciones"
